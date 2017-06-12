@@ -1,0 +1,26 @@
+# editorconfig for Aprigi
+# http://editorconfig.org
+# Description: The app for my April girl
+# Copyright (C) 2016-present Anh Tranngoc
+# This file is distributed under the same license as the aprigi package.
+# Anh Tranngoc <naa@sfc.wide.ad.jp>, 2016.
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{html,yml}]
+indent_size = 2
+
+[package.json]
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+indent_size = 8
