@@ -1,0 +1,66 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+        "indent": [
+            2,
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "linebreak-style": [
+            2,
+            "unix"
+        ],
+        "quotes": [
+            2,
+            "single"
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "curly": [
+            2,
+            "all"
+        ],
+        "camelcase": [
+            2,
+            {
+                "properties": "always"
+            }
+        ],
+        "eqeqeq": [
+            2,
+            "smart"
+        ],
+        "one-var-declaration-per-line": [
+            2,
+            "always"
+        ],
+        "new-cap": 2
+    },
+    "plugins": [
+        "react"
+    ],
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "globals": {
+        "window": true,
+        "document": true,
+        "define": true,
+        "requirejs": true,
+        "React": true
+    }
+}

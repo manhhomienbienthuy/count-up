@@ -1,9 +1,9 @@
-# editorconfig for Aprigi
+# editorconfig for count-up
 # http://editorconfig.org
-# Description: The app for my April girl
-# Copyright (C) 2016-present Anh Tranngoc
+# Description: Count up for my April girl
+# Copyright (C) 2017-present Anh Tranngoc
 # This file is distributed under the same license as the aprigi package.
-# Anh Tranngoc <naa@sfc.wide.ad.jp>, 2016.
+# Anh Tranngoc <naa@sfc.wide.ad.jp>, 2017.
 
 root = true
 
