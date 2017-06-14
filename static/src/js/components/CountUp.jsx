@@ -10,11 +10,21 @@
 import React from 'react';
 import Store from '../stores/CountUpStore';
 
+import {CountUpAction as Action} from '../actions/CountUpAction';
+
 export default class CountUp extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = Store.all;
+    }
+
+    componentWillMount() {
+        const params = new URLSearchParams(window.location.search);
+        const startTime = params.get('date');
+        if (startTime) {
+            Action.initStore({startTime: startTime});
+        }
     }
 
     componentDidMount() {
@@ -24,6 +34,10 @@ export default class CountUp extends React.Component {
     }
 
     render () {
+        let link = 'index.html';
+        if (this.state.startTime !== '2014-12-07') {
+            link = '?date=2014-12-07';
+        }
         return (
             <div className="countdown-container">
                 <p className="small-text">
@@ -65,6 +79,10 @@ export default class CountUp extends React.Component {
                     <span className="seconds">{this.state.seconds}</span>
                     <div className="small-text">Seconds</div>
                 </div>
+
+                <p className="small-text">
+                    Click <a href={link}>here</a>.
+                </p>
             </div>
         );
     }

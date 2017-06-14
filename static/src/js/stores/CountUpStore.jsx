@@ -31,7 +31,16 @@ class CountUpStore extends EventEmitter {
             startTime: '2013-02-18'
         };
 
-        this._updateStore();
+        Dispatcher.register(action => {
+            switch (action.type) {
+                case Const.INIT_STORE:
+                    this.store.startTime = action.value.startTime;
+                    this._countUp();
+                    break;
+            }
+        });
+
+        this._countUp();
         setInterval(this._countUp.bind(this), 1000);
     }
 

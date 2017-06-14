@@ -154,6 +154,7 @@ gulp.task('js', ['js-lint'], () => {
         .transform(babelify.configure(config.babel))
         .transform(uglifyify)
         .bundle()
+        .on('error', config.plumber.errorHandler)
         .pipe(plumber(config.plumber))
         .pipe(source('app.js'))
         .pipe(buffer())
