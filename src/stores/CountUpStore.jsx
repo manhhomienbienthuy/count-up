@@ -5,10 +5,8 @@
  * --------------------------------------------------------------------------
  */
 
-'use strict';
 
 import {EventEmitter} from 'events';
-import Dispatcher from '../dispatcher/Dispatcher';
 import moment from 'moment';
 import 'moment-precise-range-plugin';
 
@@ -27,18 +25,15 @@ class CountUpStore extends EventEmitter {
             'seconds'
         ];
 
-        this.store = {
-            startTime: '2013-02-18'
-        };
+        const params = new URLSearchParams(window.location.search);
+        let startTime = params.get('date');
+        if (!startTime) {
+            startTime = '2013-02-18T02:00:00+0900';
+        }
 
-        Dispatcher.register(action => {
-            switch (action.type) {
-                case Const.INIT_STORE:
-                    this.store.startTime = action.value.startTime;
-                    this._countUp();
-                    break;
-            }
-        });
+        this.store = {
+            startTime: startTime
+        };
 
         this._countUp();
         setInterval(this._countUp.bind(this), 1000);
@@ -74,4 +69,4 @@ class CountUpStore extends EventEmitter {
     }
 }
 
-export default new CountUpStore(Dispatcher);
+export default new CountUpStore();

@@ -98,10 +98,11 @@ h1 {
             background: darken($bg-blue, 15%);
             border-radius: .25rem;
         }
-
-        .small-text {
-            padding-top: .5rem;
-            font-size: 1rem;
-        }
     }
+}
+
+.small-text {
+    text-align: center;
+    padding-top: .5rem;
+    font-size: 1rem;
 }

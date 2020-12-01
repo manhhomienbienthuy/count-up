@@ -6,14 +6,18 @@
  * Anh Tranngoc <naa@sfc.wide.ad.jp>, 2017.
  */
 
-'use strict';
-
+require("./scss/app.scss");
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import CountUp from './components/CountUp';
+import Links from './components/Links';
 
 ReactDOM.render(
     <CountUp />,
     document.getElementById('countup')
+);
+ReactDOM.render(
+    <Links />,
+    document.getElementById('links')
 );

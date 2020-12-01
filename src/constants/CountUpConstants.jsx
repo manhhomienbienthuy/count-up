@@ -5,7 +5,6 @@
  * --------------------------------------------------------------------------
  */
 
-'use strict';
 
 export const CountUpConstants = {
     CHANGE_EVENT: 'countUpChangeEvent'
